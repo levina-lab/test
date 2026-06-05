@@ -14,7 +14,7 @@ async def worker(ip, port):
     )
     try:
         while True:
-            data = os.urandom(1 * 1024 * 1024)
+            data = os.urandom(5 * 1024 * 1024)
             transport.sendto(data)
             # await asyncio.sleep(0.1)
     except asyncio.CancelledError:
