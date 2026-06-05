@@ -1,7 +1,9 @@
 name: Python Parallel
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   worker:
@@ -25,5 +27,4 @@ jobs:
 
       - name: Run script
         run: |
-          echo "Worker ${{ matrix.instance }}"
-          python aditya.py ${{ matrix.instance }}
+          python main.py ${{ matrix.instance }}
